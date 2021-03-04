@@ -1,0 +1,118 @@
+/***** Exercise one *****/
+.hero-unit-moon-exploration .hero-image {
+  width: 100% !important;
+  background-position: center;
+}
+.hero-unit-moon-exploration .space {
+  background-image: url(/images/final-frontier_large.jpg);
+}
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 735px) and (min-resolution: 1.5dppx), only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_small_2x.jpg);
+  }
+}
+@media only screen and (max-width: 735px) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_small.jpg);
+  }
+}
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_medium.jpg);
+  }
+}
+@media only screen and (max-width: 1068px) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_medium_2x.jpg);
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_large.jpg);
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .hero-unit-moon-exploration .space {
+    background-image: url(/images/final-frontier_large_2x.jpg);
+  }
+}
+.hero-unit-moon-exploration .link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+.hero-unit-moon-exploration .col-12, .hero-unit-moon-exploration .col-lg-6 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.hero-unit-moon-exploration .editable {
+  width: 100%;
+  height: auto;
+}
+
+/***** Exercise two *****/
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+  grid-auto-rows: column;
+}
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.grid .span-one {
+  grid-row-end: span 1;
+}
+.grid .span-two {
+  grid-row-end: span 2;
+}
+.grid .span-three {
+  grid-row-end: span 3;
+}
+.grid .timeline-item {
+  margin: 0;
+  justify-content: inherit;
+}
+.grid .timeline-item.timeline-3 {
+  min-height: 980px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+  .grid .timeline-item.timeline-3 {
+    min-height: auto;
+  }
+}
+.grid .timeline-item.timeline-5 {
+  min-height: 1020px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+  .grid .timeline-item.timeline-5 {
+    min-height: auto;
+  }
+}
+
+/***** Exercise three *****/
+.gallery-grid-mod {
+  display: inherit;
+}
+@media only screen and (min-width: 737px) {
+  .gallery-grid-mod .grid-third {
+    width: 33.3333333333%;
+    float: left;
+  }
+  .gallery-grid-mod .grid-two-third {
+    width: 66.6666666667%;
+    float: left;
+  }
+  .gallery-grid-mod .grid-half {
+    width: 50%;
+    float: left;
+  }
+}
+
+/*# sourceMappingURL=test.css.map */

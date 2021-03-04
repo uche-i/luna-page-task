@@ -1,0 +1,131 @@
+@mixin mq($points) {
+  @if $points == size-xs{
+    @media only screen and (max-width:735px) and (-webkit-min-device-pixel-ratio:1.5),only screen and (max-width:735px) and (min-resolution:1.5dppx),only screen and (max-width:735px) and (min-resolution:144dpi)  { @content; }
+  }
+  @else if $points == size-sm{
+    @media only screen and (max-width:735px)  { @content; }
+  }
+  @else if $points == size-m{
+    @media only screen and (min-width:737px)  { @content; }
+  }
+  @else if $points == size-md {
+    @media only screen and (max-width:1068px) and (-webkit-min-device-pixel-ratio:1.5),only screen and (max-width:1068px) and (min-resolution:1.5dppx),only screen and (max-width:1068px) and (min-resolution:144dpi)  { @content; }
+  }
+  @else if $points == size-lg {
+    @media only screen and (max-width:1068px)  { @content; }
+  }
+  @else if $points == size-xl {
+    @media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi),only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-resolution:1.5dppx) { @content; }
+  }
+  @else if $points == size-xxl {
+    @media only screen and (min-width:1441px) { @content; }
+  }
+}
+
+/***** Exercise one *****/
+
+.hero-unit-moon-exploration {
+  .hero-image {
+    width: 100% !important;
+    background-position: center;
+  }
+  .space {
+    background-image:url(/images/final-frontier_large.jpg);
+
+    @include mq(size-xs) {
+      background-image:url(/images/final-frontier_small_2x.jpg)
+    }
+    @include mq(size-sm) {
+      background-image:url(/images/final-frontier_small.jpg)
+    }
+    @include mq(size-md) {
+      background-image:url(/images/final-frontier_medium.jpg)
+    }
+    @include mq(size-lg) {
+      background-image:url(/images/final-frontier_medium_2x.jpg)
+    }
+    @include mq(size-xl) {
+      background-image:url(/images/final-frontier_large.jpg)
+    }
+    @include mq(size-xxl) {
+      background-image:url(/images/final-frontier_large_2x.jpg)
+    }
+  }
+  .link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+  }
+  .col-12, .col-lg-6 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .editable {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/***** Exercise two *****/
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(540px,1fr));
+  grid-auto-rows: column;
+  @include mq(size-md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .span-one {
+    grid-row-end: span 1;
+  }
+  .span-two {
+    grid-row-end: span 2;
+  }
+  .span-three {
+    grid-row-end: span 3;
+  }
+  .timeline-item {
+    margin: 0;
+    justify-content: inherit;
+    &.timeline-3 {
+      min-height: 980px;
+      @include mq(size-xl) {
+        min-height: auto;
+      }
+    }
+    &.timeline-5 {
+      min-height: 1020px;
+      @include mq(size-xl) {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+/***** Exercise three *****/
+
+.gallery-grid-mod {
+  // display: flex;
+  // -ms-flex-wrap: wrap;
+  // flex-wrap: wrap;
+  display: inherit;
+  @include mq(size-m) {
+      .grid-third {
+          width: 370px / 1110px * 100%;
+          float: left;
+      }
+      .grid-two-third {
+          width: 740px / 1110px * 100%;
+          float: left;
+      }
+      .grid-half {
+        width: 555px / 1110px * 100%;
+        float: left;
+      }
+  }
+}
